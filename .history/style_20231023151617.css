@@ -1,0 +1,84 @@
+body{
+    width: 100%;
+    height: 100%;
+    background: #159957;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ;
+}
+.calculator{
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 10px 15px rgb(71, 71, 71);
+    background: rgb(71, 71, 71);
+    border-radius: 10px;
+}
+#display{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 20px;
+    border-radius:10px;
+    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.2);
+    animation: rainbow 3s infinite;
+}
+@keyframes rainbow {
+    0%{
+        box-shadow:0 0 15px 10px rgba(255,0 ,0 ,0.2 )
+    }
+    20%{
+        box-shadow: 0 0 15px 10px rgba(255, 165, 0, 0.2)
+    }
+    40%{
+        box-shadow: 0 0 15px 10px rgba(255,255,0, 0.2)
+    }
+    60%{
+        box-shadow: 0 0 15px 10px rgba(0,128 , 0, 0.2);
+    }
+    80%{
+        box-shadow: 0 0 15px 10px rgba(0, 0, 255, 0.2);
+    }
+    100%{
+        box-shadow: 0 0 15px 10px rgba(128,0,128,0.2);
+    }
+}
+.buttons button{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 5px;
+    cursor:pointer;
+    border-radius:50%;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ;
+    position: relative;
+    overflow: hidden;
+}
+.buttons button::before{
+content:"";
+position: absolute;
+top: -50%;
+left:-50%;
+width: 200%;
+height:200%;
+background:conic-gradient(from 0 dec, red, blue, green, yellow, cyan, magenta, brown );
+background-size: 400% 400%;
+border-radius:50%;
+opacity: 0;
+transition: opacity 0.3s;
+}
+.buttons button:hover::before{
+    opacity: 0;
+}
+buttons button:hover{
+    background-color:#b0b0b0;
+    box-shadow: 0 0 10px red , 0 0 10px green, 0 0 10px blue;
+    transform:scale (1.05);
+}
+buttons button:active{
+    transform:scale(0.95);
+    box-shadow:0 0 15px 10px rgba(0,0,0 ,0.2 );
+}
